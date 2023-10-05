@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import boto3
 import json
 from datetime import datetime
@@ -98,4 +97,3 @@ if __name__ == "__main__":
     # Create the VPC and print the response
     vpc_json_response = vpc_manager.create_vpc(cidr_block, vpc_name)
     print(vpc_json_response)
->>>>>>> ea033d209b93818a59dd4c53da51ae43d3a751bb
