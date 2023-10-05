@@ -9,14 +9,14 @@ ec2_client = boto3.client('ec2')
 instance_params = {
     'ImageId': 'ami-067d1e60475437da2',  # Image ID of the AMI
     'InstanceType': 't2.micro',  # Choose the desired instance type
-    'KeyName': 'my-ec2-boto3-20231005152040',  # Replace with your key pair name
+    'KeyName': 'YOUR-KEYPAIR',  # Replace with your key pair name
     'MinCount': 1,  # Minimum number of instances to launch
     'MaxCount': 1,  # Maximum number of instances to launch
     'NetworkInterfaces': [
         {
             'DeviceIndex': 0,
-            'Groups': ['sg-085ebbc6e54bfa017'],  # Replace with your VPC security group ID
-            'SubnetId': 'subnet-0f2081ea77cb9220c'  # Associate the instance with the private subnet
+            'Groups': ['YOUR-ID-SECURITY-GROUP'],  # Replace with your VPC security group ID
+            'SubnetId': 'YOUR-ID-SUBNET'  # Associate the instance with the private subnet
         }
     ],
     'TagSpecifications': [
@@ -24,7 +24,7 @@ instance_params = {
             'ResourceType': 'instance',
             'Tags': [
                 {
-                    'Key': 'INSTANCE_EC2_PRIVATE2',
+                    'Key': 'YOUR-NAME-INSTANCE',
                     'Value': f'MyEC2Private_{datetime.now().strftime("%Y%m%d%H%M%S")}'  # Add the current date and time to the name
                 }
             ]
@@ -43,7 +43,7 @@ instance_details = {
     'InstanceId': instance_id,
     'InstanceType': instance_params['InstanceType'],
     'SubnetId': instance_params['NetworkInterfaces'][0]['SubnetId'],  # Get the SubnetId from NetworkInterfaces
-    'VpcSecurityGroupId': 'sg-085ebbc6e54bfa017',  # Replace with your VPC security group ID
+    'VpcSecurityGroupId': 'YOR-ID-SECURITY-GROUP',  # Replace with your VPC security group ID
     'CreationTime': datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 }
 
