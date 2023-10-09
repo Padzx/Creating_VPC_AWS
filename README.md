@@ -1,2 +1,2 @@
 # VPC_AWS
-with this code you can create an VPC Cloud through Boto3 
+In this repository we cover the topic of how to create a VPC and associate an instance with a VPC and Subnet of your choice.
